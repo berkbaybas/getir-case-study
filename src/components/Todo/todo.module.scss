@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
 
 .Todo {
   height: 150px;
@@ -8,9 +9,13 @@
   display: flex;
   justify-content: space-between;
   border-radius: $gutter;
+  margin: 20px;
 
-  &:not(:first-child) {
-    margin-left: 20px;
+  @include mq('desktop') {
+    width: calc(50% - 40px);
+  }
+  @include mq {
+    width: 100%;
   }
 
   &.completed {
