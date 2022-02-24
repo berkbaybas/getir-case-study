@@ -13,6 +13,10 @@
     margin-left: 20px;
   }
 
+  &.completed {
+    background-color: rgba($color: $color-green, $alpha: 0.7);
+  }
+
   &-info {
     font-weight: $font-semibold;
     font-size: $size-todo-title;
@@ -33,11 +37,19 @@
         transform: scale(1.2);
       }
     }
+
+    button {
+      background-color: transparent;
+    }
+
     &-closeIcon {
       fill: $color-red;
     }
     &-completedIcon {
       fill: $color-green;
+    }
+    &-notCompletedIcon {
+      fill: $color-primary;
     }
   }
 }
