@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+
+body {
+  font-family: $font-family;
+  font-weight: $font-regular;
+  background-image: linear-gradient(
+    to right top,
+    #5d3ebc,
+    #613d9e,
+    #5e3d82,
+    #563e69,
+    #4b3f51
+  );
+  height: 100vh;
+}
