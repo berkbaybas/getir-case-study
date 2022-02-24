@@ -1,5 +1,5 @@
-import { createStore } from 'redux'
+import { ADD_TODO } from '../../constant/actionTypes'
 
-const store = createStore()
-
-export default store
+export const addTodo = (item) => {
+  return { type: ADD_TODO, payload: item }
+}

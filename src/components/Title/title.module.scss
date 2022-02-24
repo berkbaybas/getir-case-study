@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+.Title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 64px;
+  padding-bottom: 32px;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: $font-bold;
+    color: $color-yellow;
+  }
+}

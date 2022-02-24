@@ -1,0 +1,43 @@
+@import '../../styles/variables.scss';
+
+.Todo {
+  height: 150px;
+  width: 300px;
+  background-color: white;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: $gutter;
+
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  &-info {
+    font-weight: $font-semibold;
+    font-size: $size-todo-title;
+  }
+
+  &-icons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 16px;
+    .icon {
+      height: $size-icon;
+      width: $size-icon;
+      cursor: pointer;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    &-closeIcon {
+      fill: $color-red;
+    }
+    &-completedIcon {
+      fill: $color-green;
+    }
+  }
+}
