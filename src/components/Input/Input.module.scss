@@ -1,0 +1,37 @@
+@import '../../styles/variables.scss';
+
+.Input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    height: 50px;
+    padding: 10px 10px 10px 15px;
+    border-bottom-left-radius: $gutter;
+    border-top-left-radius: $gutter;
+    border: 1px solid $color-yellow;
+    color: $color-primary;
+    font-weight: $font-semibold;
+
+    &::placeholder {
+      color: $color-primary;
+      font-weight: $font-semibold;
+      opacity: 0.8;
+    }
+  }
+
+  button {
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-right-radius: $gutter;
+    border-top-right-radius: $gutter;
+    background-color: $color-yellow;
+    color: $color-primary;
+    font-weight: $font-semibold;
+  }
+}

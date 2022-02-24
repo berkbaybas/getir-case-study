@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;700&display=swap');
 
 body {
   font-family: $font-family;
@@ -12,4 +12,18 @@ body {
     #4b3f51
   );
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  border: 0;
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  cursor: pointer;
 }
