@@ -18,15 +18,32 @@
   }
 
   &-info {
+    color: $color-primary;
     font-weight: $font-semibold;
     font-size: $size-todo-title;
+    overflow-y: auto;
+    flex: 1;
+
+    .editInput {
+      color: $color-yellow;
+      font-weight: $font-bold;
+      height: 100%;
+      width: 100%;
+      border: 0;
+      resize: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 
   &-icons {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    margin-left: 16px;
+    margin-left: 8px;
+
     .icon {
       height: $size-icon;
       width: $size-icon;
@@ -51,5 +68,11 @@
     &-notCompletedIcon {
       fill: $color-primary;
     }
+  }
+}
+
+.editMode {
+  .Todo-info {
+    overflow-y: hidden;
   }
 }

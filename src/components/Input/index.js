@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { addTodo } from '../../store/actions/todoAction'
-import { ADD_TODO } from '../../constant/actionTypes'
 
 import styles from './Input.module.scss'
 
@@ -16,15 +15,22 @@ const Input = () => {
     setInputValue('')
   }
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      addTodoHandler()
+    }
+  }
+
   return (
     <div className={styles.Input}>
       <input
         type="text"
         placeholder="type your todo"
+        value={inputValue}
         onChange={(e) => {
           setInputValue(e.target.value)
         }}
-        value={inputValue}
+        onKeyDown={handleKeyDown}
       />
       <button onClick={addTodoHandler}>Add</button>
     </div>
