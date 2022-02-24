@@ -49,9 +49,8 @@ const Todo = ({ todo }) => {
     <div
       className={`${styles.Todo} ${todo.isCompleted ? styles.completed : ''} 
       ${titleEditMode ? styles.editMode : ''}`}
-      onClick={editModeHandler}
     >
-      <div className={styles['Todo-info']}>
+      <div className={styles['Todo-info']} onClick={editModeHandler}>
         {titleEditMode ? (
           <textarea
             ref={inputEl}
