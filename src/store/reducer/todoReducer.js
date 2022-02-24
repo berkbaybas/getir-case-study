@@ -2,7 +2,8 @@ import {
   ADD_TODO,
   REMOVE_TODO,
   CHANGE_STATUS,
-  EDIT_TITLE
+  EDIT_TITLE,
+  FETCH_ALL_TODOS
 } from '../../constant/actionTypes'
 
 import { v4 as uuidv4 } from 'uuid'
@@ -50,6 +51,10 @@ const todoReducer = (state = initialState, action) => {
       }
       return { ...state, items: copyTodoItems }
     }
+
+    case FETCH_ALL_TODOS:
+      console.log(action.payload)
+      return { ...state, items: action.payload }
 
     default:
       return state

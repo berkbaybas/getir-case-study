@@ -2,7 +2,8 @@ import {
   ADD_TODO,
   REMOVE_TODO,
   CHANGE_STATUS,
-  EDIT_TITLE
+  EDIT_TITLE,
+  FETCH_ALL_TODOS
 } from '../../constant/actionTypes'
 
 export const addTodo = (item) => {
@@ -19,4 +20,8 @@ export const changeStatusTodo = (id) => {
 
 export const editTodoTitle = (id, newTitle) => {
   return { type: EDIT_TITLE, payload: { id, newTitle } }
+}
+
+export const fetchAllTodo = () => {
+  return { type: FETCH_ALL_TODOS }
 }
