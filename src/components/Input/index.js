@@ -8,10 +8,9 @@ import styles from './Input.module.scss'
 const Input = ({ setIsAlertActive }) => {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')
-  const regexp = /^\S*$/
 
   const addTodoHandler = () => {
-    if (inputValue.length === 0 || !regexp.test(inputValue)) {
+    if (inputValue.length === 0) {
       setIsAlertActive(true)
       return
     }
@@ -26,6 +25,10 @@ const Input = ({ setIsAlertActive }) => {
     }
   }
 
+  const inputFormatHandle = () => {
+    setInputValue((prevState) => prevState.trim())
+  }
+
   return (
     <div className={styles.Input}>
       <input
@@ -36,6 +39,7 @@ const Input = ({ setIsAlertActive }) => {
           setInputValue(e.target.value)
         }}
         onKeyDown={handleKeyDown}
+        onBlur={inputFormatHandle}
       />
       <button onClick={addTodoHandler}>Add</button>
     </div>

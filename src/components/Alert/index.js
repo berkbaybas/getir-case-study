@@ -13,7 +13,7 @@ const Alert = ({ isAlertActive, setIsAlertActive }) => {
       onClick={() => setIsAlertActive(false)}
       ref={alertRef}
     >
-      <p className={styles['Alert-title']}>You cannot enter a null value.</p>
+      <p className={styles['Alert-title']}>You cannot enter a empty value.</p>
     </div>
   ) : (
     ''
