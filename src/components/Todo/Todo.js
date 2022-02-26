@@ -20,7 +20,6 @@ const Todo = ({ todo }) => {
     }
     if (!titleEditMode && inputEl !== null) {
       const newTodo = { ...todo, title: currentTitle }
-      console.log(newTodo)
       dispatch(editAsyncTodo(newTodo))
     }
   }, [inputEl, titleEditMode])
@@ -33,7 +32,6 @@ const Todo = ({ todo }) => {
 
   const editTodoHandler = () => {
     const newTodo = { ...todo, isCompleted: !todo.isCompleted }
-    console.log('edit', newTodo)
     dispatch(editAsyncTodo(newTodo))
   }
 

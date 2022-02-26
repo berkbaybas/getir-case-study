@@ -34,7 +34,6 @@ export function* watchPostTodoSaga() {
 
 function* putSaga({ payload }) {
   const response = yield putTodo(payload)
-  console.log(response)
   yield put(editTodo(response))
 }
 

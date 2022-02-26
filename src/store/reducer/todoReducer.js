@@ -30,7 +30,6 @@ const todoReducer = (state = initialState, action) => {
       copyTodoItems[index] = {
         ...newTodo
       }
-      console.log(copyTodoItems)
       return { ...state, items: copyTodoItems }
 
     case REMOVE_TODO:
