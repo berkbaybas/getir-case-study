@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
 
 .Title {
   display: flex;
@@ -15,5 +16,13 @@
   h6 {
     font-weight: $font-bold;
     color: $color-yellow;
+  }
+
+  h1 {
+    font-size: 48px;
+
+    @include mq {
+      font-size: 36px;
+    }
   }
 }
