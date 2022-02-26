@@ -1,4 +1,4 @@
-import { put, takeEvery } from 'redux-saga/effects'
+import { put, call, takeEvery } from 'redux-saga/effects'
 
 import {
   postTodo,
@@ -14,8 +14,8 @@ import {
 } from '../../constant/actionTypes'
 import { setTodos, addTodo, removeTodo, editTodo } from '../actions/todoAction'
 
-function* fetchSaga() {
-  const response = yield getTodos()
+export function* fetchSaga() {
+  const response = yield call(getTodos)
   yield put(setTodos(response))
 }
 
@@ -23,7 +23,7 @@ export function* watchFetchTodosSaga() {
   yield takeEvery(FETCH_ASYNC_TODOS, fetchSaga)
 }
 
-function* postSaga({ payload }) {
+export function* postSaga({ payload }) {
   const responseTodo = yield postTodo(payload)
   yield put(addTodo(responseTodo))
 }
