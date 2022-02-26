@@ -8,12 +8,14 @@ import styles from './Input.module.scss'
 const Input = ({ setIsAlertActive }) => {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')
+  const regexp = /^\S*$/
 
   const addTodoHandler = () => {
-    if (inputValue.length === 0) {
+    if (inputValue.length === 0 || !regexp.test(inputValue)) {
       setIsAlertActive(true)
       return
     }
+
     dispatch(postAsyncTodo(inputValue))
     setInputValue('')
   }
