@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchAllTodo } from '../../store/actions/todoAction'
+import { fetchAsyncTodos } from '../../store/actions/todoAction'
 
 import Todo from './Todo'
 
@@ -11,7 +11,7 @@ const TodoList = () => {
   const { items } = useSelector((state) => state.todo)
 
   useEffect(() => {
-    dispatch(fetchAllTodo())
+    dispatch(fetchAsyncTodos())
   }, [dispatch])
 
   return (

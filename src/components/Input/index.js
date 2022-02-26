@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { addTodo } from '../../store/actions/todoAction'
+import { postAsyncTodo } from '../../store/actions/todoAction'
 
 import styles from './Input.module.scss'
 
@@ -10,8 +10,7 @@ const Input = () => {
   const [inputValue, setInputValue] = useState('')
 
   const addTodoHandler = () => {
-    console.log(inputValue)
-    dispatch(addTodo(inputValue))
+    dispatch(postAsyncTodo(inputValue))
     setInputValue('')
   }
 

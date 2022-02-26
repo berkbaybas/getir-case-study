@@ -30,12 +30,14 @@
     flex: 1;
 
     .editInput {
-      color: $color-yellow;
-      font-weight: $font-bold;
       height: 100%;
       width: 100%;
       border: 0;
       resize: none;
+      color: $color-yellow;
+      font-weight: $font-bold;
+      border-radius: $gutter;
+      padding: $gutter;
 
       &:focus {
         outline: none;

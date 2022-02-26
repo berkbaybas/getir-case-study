@@ -1,10 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import {
-  removeTodo,
-  changeStatusTodo,
-  editTodoTitle
-} from '../../store/actions/todoAction'
+import { deleteAsyncTodo, editAsyncTodo } from '../../store/actions/todoAction'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 import { AiOutlineCloseCircle, AiOutlineCheck } from 'react-icons/ai'
@@ -22,8 +18,10 @@ const Todo = ({ todo }) => {
     if (titleEditMode && inputEl.current) {
       inputEl.current.focus()
     }
-    if (!titleEditMode) {
-      dispatch(editTodoTitle(todo.id, currentTitle))
+    if (!titleEditMode && inputEl !== null) {
+      const newTodo = { ...todo, title: currentTitle }
+      console.log(newTodo)
+      dispatch(editAsyncTodo(newTodo))
     }
   }, [inputEl, titleEditMode])
 
@@ -33,12 +31,14 @@ const Todo = ({ todo }) => {
     setCurrentTitle(title)
   }
 
-  const removeTodoHandler = (id) => {
-    dispatch(removeTodo(id))
+  const editTodoHandler = () => {
+    const newTodo = { ...todo, isCompleted: !todo.isCompleted }
+    console.log('edit', newTodo)
+    dispatch(editAsyncTodo(newTodo))
   }
 
-  const changeStatusHandler = (id) => {
-    dispatch(changeStatusTodo(id))
+  const removeTodoHandler = (id) => {
+    dispatch(deleteAsyncTodo(id))
   }
 
   const editModeHandler = () => {
@@ -81,7 +81,7 @@ const Todo = ({ todo }) => {
         />
         <button
           onClick={() => {
-            changeStatusHandler(todo.id)
+            editTodoHandler(todo.id)
           }}
         >
           {todo.isCompleted ? (

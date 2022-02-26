@@ -5,8 +5,6 @@ import Input from './components/Input'
 import TodoList from './components/Todo/TodoList'
 
 function App() {
-  const todo = useSelector((state) => state.todo)
-  console.log(todo)
   return (
     <div className="App">
       <Title>
