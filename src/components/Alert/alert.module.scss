@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+.Alert {
+  width: 100%;
+  padding: 10px 30px;
+  border-radius: $gutter;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-title {
+    font-size: calc($size-todo-title * 2);
+    font-weight: $font-regular;
+
+    @include mq {
+      font-size: $size-todo-title;
+    }
+  }
+}

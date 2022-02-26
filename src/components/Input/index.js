@@ -5,11 +5,15 @@ import { postAsyncTodo } from '../../store/actions/todoAction'
 
 import styles from './Input.module.scss'
 
-const Input = () => {
+const Input = ({ setIsAlertActive }) => {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')
 
   const addTodoHandler = () => {
+    if (inputValue.length === 0) {
+      setIsAlertActive(true)
+      return
+    }
     dispatch(postAsyncTodo(inputValue))
     setInputValue('')
   }
