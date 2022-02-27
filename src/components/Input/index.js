@@ -9,8 +9,13 @@ const Input = ({ setIsAlertActive }) => {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')
 
+  const isContainWhiteSpaceRegex = /\s/g
+
   const addTodoHandler = () => {
-    if (inputValue.length === 0) {
+    if (
+      inputValue.length === 0 ||
+      !inputValue.replace(isContainWhiteSpaceRegex, '').length
+    ) {
       setIsAlertActive(true)
       return
     }
