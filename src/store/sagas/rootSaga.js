@@ -1,4 +1,4 @@
-import { spawn } from 'redux-saga/effects'
+import { all, fork } from 'redux-saga/effects'
 import {
   watchFetchTodosSaga,
   watchPostTodoSaga,
@@ -7,8 +7,10 @@ import {
 } from './todoSaga'
 
 export function* rootSaga() {
-  yield spawn(watchFetchTodosSaga)
-  yield spawn(watchPostTodoSaga)
-  yield spawn(watchEditTodoSaga)
-  yield spawn(watchDeleteTodoSaga)
+  yield all([
+    fork(watchFetchTodosSaga),
+    fork(watchPostTodoSaga),
+    fork(watchEditTodoSaga),
+    fork(watchDeleteTodoSaga)
+  ])
 }
